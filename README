@@ -5,3 +5,24 @@ and simple. SHTTPD has small memory footprint. Use it when other
 web servers like Apache are too heavy for your tasks.
 
 WWW:    http://shttpd.sourceforge.net
+
+
+-------------------------------------
+这是我平时学习参考的一个web服务器,基于自己的理解在代码中加入了中文注释,当然由于个人知识以及精力的确有限,目前还没有完全注释,而且也可能存在一些理解错误.
+
+如果你打算从代码级别了解web服务器是怎么运作的,或者打算改进这个服务器,乃至自己写一个更好的服务器,或许你需要先学习别人是怎么实现的.
+
+虽然现在有蛮多其他的服务器,如nginx,apache,mini_http,lighttpd,micro_httpd等等,但总的来说,web服务器原理大体相同,当然性能各异,用途场景略微不同,这个与实现紧密相关.因此,对于学习来说,选择其中的一款加以学习就OK了.
+
+基于这款web服务器,我部署过文件服务器以及视频服务器,小访问量应该是没有问题的,作为学习型完全足够.但是需要说明的,这个服务器并不是demo,属于工业级别可应用于生产.
+
+另外,shttpd(v:shttpd-1.38)在Hpux机器上运行有bug,我修复了这个bug,之后我会提交修复版本,如果你使用Hpux操作系统,应当注意.
+
+任何问题可以联系我:lihaiyangcsu@gmail.com
+
+然后就是shttpd项目已经发展为Mongoose,但是这个不影响我们学习源代码.
+
+最后,感谢原作者Sergey Lyubka.
+
+希望可以帮到大家.
+
