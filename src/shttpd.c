@@ -1008,7 +1008,9 @@ write_stream(struct stream *from, struct stream *to)
 
 	if (n > 0)
 		io_inc_tail(&from->io, n);
-	else if (n == -1 && (ERRNO == EINTR || ERRNO == EWOULDBLOCK))
+	//解决Hpux上的一个bug
+	//EWOULDBLOCK与EAGAIN信号宏定义的差异
+	else if (n == -1 && (ERRNO == EINTR || ERRNO == EWOULDBLOCK || ERRNO == EAGAIN))
 		n = n;	/* Ignore EINTR and EAGAIN */
 	else if (!(to->flags & FLAG_DONT_CLOSE))
 		stop_stream(to);

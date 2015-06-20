@@ -44,6 +44,10 @@ put_dir(const char *path)
 static int
 read_dir(struct stream *stream, void *buf, size_t len)
 {
+	//自定义FILENAME_MAX长度,解决Hpux上的一个bug
+	//Hpux默认FILENAME_MAX为14字节
+	#undef FILENAME_MAX
+	#define FILENAME_MAX 256
 	struct dirent	*dp = NULL;
 	char		file[FILENAME_MAX], line[FILENAME_MAX + 512],
 				size[64], mod[64];
@@ -101,6 +105,7 @@ read_dir(struct stream *stream, void *buf, size_t len)
 	} while (dp != NULL);
 
 	return (nwritten);
+	#undef FILENAME_MAX
 }
 
 static void
