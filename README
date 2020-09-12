@@ -18,7 +18,7 @@ WWW:    http://shttpd.sourceforge.net
 
 另外,shttpd(v:shttpd-1.38)在Hpux机器上运行有bug,我修复了这个bug,之后我会提交修复版本,如果你使用Hpux操作系统,应当注意.
 
-任何问题可以联系我:lihaiyangcsu@gmail.com
+任何问题可以联系我
 
 然后就是shttpd项目已经发展为Mongoose,但是这个不影响我们学习源代码.
 
